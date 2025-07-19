@@ -160,15 +160,15 @@
       });
     }
   }
-})({"5j6Kf":[function(require,module,exports,__globalThis) {
+})({"9JJ5D":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SERVER_PORT = 1234;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "439701173a9199ea";
+var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "d68ad56631b563d9";
+module.bundle.HMR_BUNDLE_ID = "7055c94b59712999";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_SERVER_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -666,28 +666,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     }
 }
 
-},{}],"a0t4e":[function(require,module,exports,__globalThis) {
-// Функція для отримання всіх студентів
-function getStudents() {
-// твій код
-}
-// Функція для відображення студентів у таблиці
-function renderStudents(students) {
-// твій код
-}
-// Функція для додавання нового студента
-function addStudent(e) {
-// твій код
-}
-// Функція для оновлення студента
-function updateStudent(id) {
-// твій код
-}
-// Функція для видалення студента
-function deleteStudent(id) {
-// твій код
-}
+},{}],"4M6V8":[function(require,module,exports,__globalThis) {
 
-},{}]},["5j6Kf","a0t4e"], "a0t4e", "parcelRequire2d62", {})
+},{}]},["9JJ5D","4M6V8"], "4M6V8", "parcelRequire2d62", {})
 
-//# sourceMappingURL=CRUD-homework.31b563d9.js.map
+//# sourceMappingURL=CRUD-homework.59712999.js.map
