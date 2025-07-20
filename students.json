@@ -7,7 +7,7 @@
       "course": "Web Development",
       "skills": "HTML,CSS,JavaScript",
       "email": "ivan.petrenko@example.com",
-      "isEnrolled": false
+      "isEnrolled": true
     },
     {
       "id": "2",
@@ -24,15 +24,11 @@
     {
       "id": "3",
       "name": "Dmytro Shevchenko",
-      "age": 14,
+      "age": 17,
       "course": "Mobile App Development",
-      "skills": [
-        "Java",
-        "Kotlin",
-        "Android Studio"
-      ],
+      "skills": "Java,Kotlin,Android Studio",
       "email": "dmytro.shevchenko@example.com",
-      "isEnrolled": false
+      "isEnrolled": true
     },
     {
       "id": "4",

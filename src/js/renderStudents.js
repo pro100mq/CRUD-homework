@@ -31,7 +31,7 @@ export function renderStudents(students) {
         <td class="email">${object.email}</td>
         <td class="isEnrolled">${object.isEnrolled}</td>
         <td>
-            <button style="margin-bottom: 5px" class="edit-button">Редагувати</button>
+            <button class="edit-button">Редагувати</button>
             <button class="delete-button">Видалити</button>
         </td>
     </tr>
