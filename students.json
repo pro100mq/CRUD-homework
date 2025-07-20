@@ -1,20 +1,16 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Ivan Petrenko",
       "age": 15,
       "course": "Web Development",
-      "skills": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
+      "skills": "HTML,CSS,JavaScript",
       "email": "ivan.petrenko@example.com",
-      "isEnrolled": true
+      "isEnrolled": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Olha Kovalenko",
       "age": 16,
       "course": "Game Development",
@@ -26,7 +22,7 @@
       "isEnrolled": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Dmytro Shevchenko",
       "age": 14,
       "course": "Mobile App Development",
@@ -39,7 +35,7 @@
       "isEnrolled": false
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Anastasia Ivanova",
       "age": 17,
       "course": "Data Science",
@@ -52,7 +48,7 @@
       "isEnrolled": true
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Mykola Bondarenko",
       "age": 15,
       "course": "Cybersecurity",
@@ -63,42 +59,6 @@
       ],
       "email": "mykola.bondarenko@example.com",
       "isEnrolled": true
-    },
-    {
-      "id": "5492",
-      "name": "Кіріл",
-      "age": "20",
-      "course": "Cybersecurity",
-      "skills": "Python, Pandas, Machine Learning",
-      "email": "kiril.pris@gmail.com",
-      "isEnrolled": "false"
-    },
-    {
-      "id": "13c4",
-      "name": "Кіріл",
-      "age": "20",
-      "course": "Cybersecurity",
-      "skills": "Python, Pandas, Machine Learning",
-      "email": "kiril.pris@gmail.com",
-      "isEnrolled": "false"
-    },
-    {
-      "id": "5df6",
-      "name": "Кіріл",
-      "age": "33",
-      "course": "Cybersecurity",
-      "skills": "Python, Pandas, Machine Learning",
-      "email": "kiril.pris@gmail.com",
-      "isEnrolled": "false"
-    },
-    {
-      "id": "cdfc",
-      "name": "pro100mq",
-      "age": "443",
-      "course": "23",
-      "skills": "11",
-      "email": "clashofclanspro577@gmail.com",
-      "isEnrolled": "false"
     }
   ]
 }

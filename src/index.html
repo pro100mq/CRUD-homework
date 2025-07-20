@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Students</title>
     <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>Список студентів</h1>
@@ -20,7 +22,7 @@
                     <th>Навички</th>
                     <th>Email</th>
                     <th>Статус</th>
-                    <th>Дії</th>
+                    <th id="Dii">Дії</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,11 +41,32 @@
             <label>Навички (через кому): <input type="text" id="skills" required></label>
             <label>Email: <input type="email" id="email" required></label>
             <label>Записаний: <input type="checkbox" id="isEnrolled"></label>
-            <button type="submit">Додати студента</button>
+            <button id="addStudents" type="submit">Додати студента</button>
             <button id="editStudent" type="submit">Змінити студента</button>
         </form>
     </div>
 
+    <div class="modal-backdrop">
+        <div class="modal" id="modalEdit">
+            <div class="modal-info">
+                <h2>Змінити студента</h2>
+                <form action="" class="modalform">
+                    <input type="text" id="modalNameChange" placeholder="Ім'я" />
+                    <input type="number" id="modalAgeChange" placeholder="Вік" />
+                    <input type="text" id="modalCourseChange" placeholder="Курс" />
+                    <input type="text" id="modalSkillsChange" placeholder="Навички" />
+                    <input type="email" id="modalEmailChange" placeholder="Email" />
+                    <input type="checkbox" id="isEnrolledChange" />
+                    <div class="modal-button">
+                        <button type="button" class="modal-edit-btn">Редагувати</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
     <script type="module" src="./index.js"></script>
 </body>
+
 </html>

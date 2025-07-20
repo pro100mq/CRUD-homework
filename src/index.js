@@ -4,10 +4,7 @@ import {updateStudent} from "./api/updateStudents"
 import {deleteStudent} from "./api/deleteStudents";
 import {renderStudents} from "./js/renderStudents";
 
-
-
-document.querySelector('#get-students-btn').addEventListener('click', () => {
-
+document.querySelector("#get-students-btn").addEventListener("click", () => {
     getStudents().then(
     (data) =>{
         console.log(data);
@@ -16,7 +13,7 @@ document.querySelector('#get-students-btn').addEventListener('click', () => {
   );
 })
 
-document.querySelector('#add-student-form').addEventListener('submit', (e) => {
+document.querySelector("#add-student-form").addEventListener("submit", (e) => {
     e.preventDefault();
     const name = e.target.elements.name.value;
     const age = e.target.elements.age.value;
@@ -25,9 +22,9 @@ document.querySelector('#add-student-form').addEventListener('submit', (e) => {
     const email = e.target.elements.email.value;
     let isEnrolled = e.target.elements.isEnrolled.value;
     if (isEnrolled === true){
-        isEnrolled = 'true'
+        isEnrolled = "true"
     } else {
-        isEnrolled = 'false'
+        isEnrolled = "false"
     }
     const studentObject = {
       name: name,
@@ -54,53 +51,50 @@ document.querySelector('#add-student-form').addEventListener('submit', (e) => {
 
 
 let studentId = null
+document.querySelector("tbody").addEventListener("click", (e) => {
+  if (e.target.textContent.trim() === "Редагувати") {
+    const tr = e.target.closest("tr");
+    studentId = tr.getAttribute("data-id");
 
-document.querySelector('tbody').addEventListener('click', (e) => {
-    if (e.target.textContent === 'Редагувати') {
-        document.querySelector('.add').style.display = 'none'
-        document.querySelector('.edit').style.display = 'inherit'
-
-        const tr = e.target.closest('tr');
-        studentId = tr.getAttribute('data-id');
-
-        document.querySelector('#name').value = tr.querySelector('.name').textContent;;
-        document.querySelector('#age').value = tr.querySelector('.age').textContent;
-        document.querySelector('#course').value = tr.querySelector('.course').textContent;
-        document.querySelector('#skills').value = tr.querySelector('.skills').textContent;
-        document.querySelector('#email').value = tr.querySelector('.email').textContent;
-        if (tr.querySelector('.isEnrolled').textContent === 'true'){
-          document.querySelector('#isEnrolled').checked = true
-        } else {
-          document.querySelector('#isEnrolled').checked = false
-        }
-}})
-
-document.querySelector('#editStudent').addEventListener('click', () => {
-  const updatedStudent = {
-    name: document.querySelector('#name').value,
-    age: document.querySelector('#age').value,
-    course: document.querySelector('#course').value,
-    skills: document.querySelector('#skills').value,
-    email: document.querySelector('#email').value,
-    isEnrolled: document.querySelector('#isEnrolled').checked
-  };
-  console.log(studentId)
-
-  updateStudent(updatedStudent).then(() => {
-    getStudents().then((data) => {
-      document.querySelector("tbody").innerHTML = renderStudents(data);
-      document.querySelector('.add').style.display = 'inherit';
-      document.querySelector('.edit').style.display = 'none';
-    });
-  });
+    document.querySelector("#modalNameChange").value = tr.querySelector(".name").textContent;
+    document.querySelector("#modalAgeChange").value = tr.querySelector(".age").textContent;
+    document.querySelector("#modalCourseChange").value = tr.querySelector(".course").textContent;
+    document.querySelector("#modalSkillsChange").value = tr.querySelector(".skills").textContent;
+    document.querySelector("#modalEmailChange").value = tr.querySelector(".email").textContent;
+    document.querySelector("#isEnrolledChange").checked = tr.querySelector(".isEnrolled").textContent === "true";
+    document.querySelector("#modalEdit").style.display = "block";
+    document.querySelector(".modal-backdrop").style.display = "block";
+  }
 });
 
+document.querySelector(".modal-edit-btn").addEventListener("click", () => {
+  const updatedStudent = {
+        name: document.querySelector("#modalNameChange").value,
+        age: parseInt(document.querySelector("#modalAgeChange").value),
+        course: document.querySelector("#modalCourseChange").value,
+        skills: document.querySelector("#modalSkillsChange").value,
+        email: document.querySelector("#modalEmailChange").value,
+        isEnrolled: document.querySelector("#isEnrolledChange").checked
+    };
 
+    console.log(updatedStudent)
 
-document.querySelector('tbody').addEventListener('click', (e) => {
-    if (e.target.textContent === 'Видалити'){
-        const tr = e.target.closest('tr');
-        const studentId = tr.getAttribute('data-id'); 
+  updateStudent(updatedStudent, studentId)
+    .then(() => getStudents())
+    .then((data) => {
+      document.querySelector("tbody").innerHTML = renderStudents(data);
+      document.querySelector("#modalEdit").style.display = "none";
+      document.querySelector(".modal-backdrop").style.display = "none";
+    })
+    .catch(error => {
+      console.error("Error updating student:", error);
+    });
+})
+
+document.querySelector("tbody").addEventListener("click", (e) => {
+    if (e.target.textContent === "Видалити"){
+        const tr = e.target.closest("tr");
+        const studentId = tr.getAttribute("data-id"); 
         deleteStudent(studentId).then(() => {
             getStudents().then((data) => {
                 console.log(data);
