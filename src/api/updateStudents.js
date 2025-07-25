@@ -1,6 +1,6 @@
-export function updateStudent(studentData, id) {
+export async function updateStudent(studentData, id) {
   try {
-    return fetch(`http://localhost:3000/students/${id}`, {
+    return await fetch(`http://localhost:3000/students/${id}`, {
         method: 'PATCH',
         headers: {
         'Content-Type': 'application/json'

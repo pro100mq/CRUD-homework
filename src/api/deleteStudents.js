@@ -1,6 +1,6 @@
-export function deleteStudent(id){
+export async function deleteStudent(id){
   try {
-    return fetch(`http://localhost:3000/students/${id}`, {
+    return await fetch(`http://localhost:3000/students/${id}`, {
         method: "DELETE",
     });
   } catch (error) {

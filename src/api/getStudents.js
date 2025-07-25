@@ -1,6 +1,6 @@
-export function getStudents () {
+export async function getStudents () {
   try {
-    return fetch("http://localhost:3000/students")
+    return await fetch("http://localhost:3000/students")
     .then((res) => res.json())
   } catch (error) {
     console.log(error)

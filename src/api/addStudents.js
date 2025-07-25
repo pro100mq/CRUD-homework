@@ -1,6 +1,6 @@
-export function addStudent(student) {
+export async function addStudent(student) {
   try {
-    return fetch("http://localhost:3000/students", {
+    return await fetch("http://localhost:3000/students", {
         method: "POST",
         body: JSON.stringify(student),
         headers: {
